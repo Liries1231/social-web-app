@@ -66,6 +66,7 @@ public class MainController {
             String uuidFile = UUID.randomUUID().toString();
             String resultFilename = uuidFile + "." + file.getOriginalFilename();
 
+
             file.transferTo(new File(uploadPath + "/" + resultFilename));
 
             message.setFilename(resultFilename);

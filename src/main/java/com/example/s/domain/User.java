@@ -35,6 +35,7 @@ public class User implements UserDetails {
         this.activationCode = activationCode;
     }
 
+
     private String activationCode;
 
 

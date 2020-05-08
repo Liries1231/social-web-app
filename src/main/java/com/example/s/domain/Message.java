@@ -52,6 +52,7 @@ public class Message {
     }
 
 
+
     public void setId(Integer id) {
         this.id = id;
     }

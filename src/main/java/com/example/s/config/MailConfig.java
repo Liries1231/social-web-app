@@ -25,6 +25,7 @@ public class MailConfig {
 
 
 
+
     @Bean
     public JavaMailSender getMailSender(){
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
