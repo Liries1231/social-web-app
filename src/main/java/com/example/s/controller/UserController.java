@@ -1,6 +1,6 @@
 package com.example.s.controller;
 
-import com.example.s.config.Service.UserService;
+import com.example.s.Service.UserService;
 import com.example.s.domain.Role;
 import com.example.s.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +61,7 @@ public class UserController {
             @RequestParam String email
 
             ) {
-        userService.uppdateProfile(user, password, email);
+        userService.updateProfile(user, password, email);
         return "redirect:/user/profile";
     }
 

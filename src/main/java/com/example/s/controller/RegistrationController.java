@@ -1,9 +1,8 @@
 package com.example.s.controller;
 
 
-import com.example.s.config.Service.UserService;
+import com.example.s.Service.UserService;
 import com.example.s.domain.User;
-import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,17 +35,15 @@ public class RegistrationController {
         return "redirect:/login";
     }
     @GetMapping("/activate/{code}")
-    public String activate(Model model, @PathVariable String code){
-        boolean isActivated = userService.activeUser(code);
-        if (isActivated){
-            model.addAttribute("message", "User successfuly activated ");
-        }
+    public String activate(Model model, @PathVariable String code) {
+        boolean isActivated = userService.activateUser(code);
 
-        else{
-            model.addAttribute("message","Activation code is not found");
+        if (isActivated) {
+            model.addAttribute("message", "User successfully activated");
+        } else {
+            model.addAttribute("message", "Activation code is not found!");
         }
 
         return "login";
     }
-
 }

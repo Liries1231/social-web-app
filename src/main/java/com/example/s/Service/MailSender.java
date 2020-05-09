@@ -1,8 +1,7 @@
-package com.example.s.config.Service;
+package com.example.s.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -11,12 +10,12 @@ import org.springframework.stereotype.Service;
 public class MailSender {
     @Autowired
     private JavaMailSender mailSender;
+
     @Value("${spring.mail.username}")
     private String username;
 
 
-
-    public void send(String emailTo,String subject,String message){
+    public void send(String emailTo, String subject, String message) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
 
         mailMessage.setFrom(username);
@@ -26,5 +25,4 @@ public class MailSender {
 
         mailSender.send(mailMessage);
     }
-
 }
