@@ -41,7 +41,7 @@ public class UserService implements UserDetailsService {
             String message = String.format(
                     "Hello, %s! \n" +
                     "Welcome to our service. " +
-                            "lease, visit next link: http://localhost:8080/activate/%s",
+                            "Please, visit next link: http://localhost:8080/activate/%s",
                     user.getUsername(),
                     user.getActivationCode()
             );
